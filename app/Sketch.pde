@@ -3,16 +3,8 @@ class Sketch {
     int sketchH; // height in pixels
     float ppi; // pixels per inch of printed doc
 
-    int numRows = 5;
-    int numCols = 8;
-
-    int spacing = 100;
-
-    int maxFlakeSize = 40; // 20;
-    int minFlakeSize = 10; // 3;
     int numFlakesPerFrame = 1;
     int maxTries = 5000;
-    int flakePadding = 14;
 
     ArrayList<Snowflake> flakes;
 
@@ -27,8 +19,7 @@ class Sketch {
     float mx, my = 0;
 
     ImageMask mask;
-    boolean useMask = true;
-
+    
     int activeAreaX;
     int activeAreaY;
     int activeAreaW;
@@ -42,13 +33,8 @@ class Sketch {
 
         flakes = new ArrayList<Snowflake>();
         
-        // for(int y = 0; y < numRows; y += 1) {
-        //     for(int x = 0; x < numCols; x += 1) {
-        //         flakes.add(new Snowflake(100 + x * spacing, 100 + y * spacing, int(random(5, 50))));
-        //     }
-        // }
         if(useMask){
-            PImage img = loadImage("mask-snowfall.png");
+            PImage img = loadImage(maskImagePath);
             mask = new ImageMask(img, sketchW, sketchH);
         }
 
@@ -67,14 +53,13 @@ class Sketch {
     }
 
     void setActiveArea() {
-        activeAreaX = 80;
-        activeAreaY = 200;
-        activeAreaW = sketchW - 160;
-        activeAreaH = sketchH - 280;
+        activeAreaX = marginLeft;
+        activeAreaY = marginTop;
+        activeAreaW = sketchW - marginLeft - marginRight;
+        activeAreaH = sketchH - marginTop - marginBottom;
     }
 
     void draw(float penSize) {
-        // replace this with custom sketch drawing code
         strokeWeight(penSize);
 
         if(isPacking){

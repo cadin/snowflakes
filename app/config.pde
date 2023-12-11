@@ -37,3 +37,24 @@ float penSize = RAPIDOGRAPH_0;
 
 // save a PNG preview alongside SVG
 boolean savePNGPreview = true;
+
+// ----------------------------
+// ### SNOWFLAKE SETTINGS ###
+
+// inset the placement of snowflakes
+// these margins are ignored when using a mask image
+int marginTop = 200;
+int marginRight = 80;
+int marginBottom = 90;
+int marginLeft = 80;
+
+// snowflake size
+int maxFlakeSize = 40;
+int minFlakeSize = 10; 
+
+// minimum space between flakes
+int flakePadding = 14;
+
+// use a B&W image mask to indicate where to draw snowflakes
+boolean useMask = false;
+String maskImagePath = "mask-snowfall.png";
