@@ -39,3 +39,11 @@ Press **`R`** to randomize all snowflake designs.
 You can load a black and white mask image to indicate which areas of the canvas are available for snoflake placement (white), and which areas should be left blank (black).
 
 To enable this, set `useMask` to `true` in `config.pde` and set the `maskImagePath` to the mask image you want to use.
+
+## Support
+
+This is a personal project and is mostly unsupported, but I'm happy to hear feedback or answer questions.
+
+## License
+
+This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file for details.
